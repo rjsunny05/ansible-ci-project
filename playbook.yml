@@ -1,8 +1,10 @@
-- name: Install Nginx
+---
+- name: Install PostgreSQL
   hosts: all
-  become: yes
+  become: true
+
   tasks:
-    - name: Install Nginx
-      apt:
-        name: nginx
+    - name: Install PostgreSQL
+      ansible.builtin.apt:
+        name: postgresql
         state: present
